@@ -11,6 +11,8 @@
 		EB4893AC2BA1A4E700F36B55 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893AB2BA1A4E700F36B55 /* HomeView.swift */; };
 		EB4893AE2BA1A4E900F36B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4893AD2BA1A4E900F36B55 /* Assets.xcassets */; };
 		EB4893B12BA1A4E900F36B55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4893B02BA1A4E900F36B55 /* Preview Assets.xcassets */; };
+		EB4893BB2BA1ABDF00F36B55 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893BA2BA1ABDF00F36B55 /* WelcomeView.swift */; };
+		EB4893BF2BA1CE1800F36B55 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB4893BE2BA1CE1800F36B55 /* Jua-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		EB4893AB2BA1A4E700F36B55 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB4893AD2BA1A4E900F36B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB4893B02BA1A4E900F36B55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EB4893BA2BA1ABDF00F36B55 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		EB4893BE2BA1CE1800F36B55 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Jua-Regular.ttf"; path = "../../../../../Downloads/Jua/Jua-Regular.ttf"; sourceTree = "<group>"; };
+		EB4893C02BA1CEEE00F36B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,8 @@
 		EB4893A82BA1A4E700F36B55 /* Habify */ = {
 			isa = PBXGroup;
 			children = (
+				EB4893C02BA1CEEE00F36B55 /* Info.plist */,
+				EB4893BD2BA1CDEF00F36B55 /* public */,
 				EB4893B92BA1AABB00F36B55 /* Models */,
 				EB4893B82BA1AAB100F36B55 /* Views */,
 				EB4893B72BA1AAA400F36B55 /* ViewModels */,
@@ -80,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				EB4893AB2BA1A4E700F36B55 /* HomeView.swift */,
+				EB4893BA2BA1ABDF00F36B55 /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -89,6 +97,22 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EB4893BC2BA1CDE300F36B55 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EB4893BE2BA1CE1800F36B55 /* Jua-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		EB4893BD2BA1CDEF00F36B55 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				EB4893BC2BA1CDE300F36B55 /* fonts */,
+			);
+			path = public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4893BF2BA1CE1800F36B55 /* Jua-Regular.ttf in Resources */,
 				EB4893B12BA1A4E900F36B55 /* Preview Assets.xcassets in Resources */,
 				EB4893AE2BA1A4E900F36B55 /* Assets.xcassets in Resources */,
 			);
@@ -162,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4893AC2BA1A4E700F36B55 /* HomeView.swift in Sources */,
+				EB4893BB2BA1ABDF00F36B55 /* WelcomeView.swift in Sources */,
 				EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +319,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Habify/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Habify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -321,6 +348,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Habify/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Habify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
