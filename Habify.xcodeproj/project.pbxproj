@@ -13,6 +13,11 @@
 		EB4893B12BA1A4E900F36B55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4893B02BA1A4E900F36B55 /* Preview Assets.xcassets */; };
 		EB4893BB2BA1ABDF00F36B55 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893BA2BA1ABDF00F36B55 /* WelcomeView.swift */; };
 		EB4893BF2BA1CE1800F36B55 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB4893BE2BA1CE1800F36B55 /* Jua-Regular.ttf */; };
+		EB4893C32BA1D74700F36B55 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893C22BA1D74700F36B55 /* AddView.swift */; };
+		EB4893C52BA1E07C00F36B55 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893C42BA1E07C00F36B55 /* Habit.swift */; };
+		EBE696C02BA1FF4200803154 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */; };
+		EBE696C22BA20AE700803154 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696C12BA20AE700803154 /* CustomPicker.swift */; };
+		EBE696C62BA20EE500803154 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696C52BA20EE500803154 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		EB4893BA2BA1ABDF00F36B55 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		EB4893BE2BA1CE1800F36B55 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Jua-Regular.ttf"; path = "../../../../../Downloads/Jua/Jua-Regular.ttf"; sourceTree = "<group>"; };
 		EB4893C02BA1CEEE00F36B55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB4893C22BA1D74700F36B55 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		EB4893C42BA1E07C00F36B55 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
+		EBE696C12BA20AE700803154 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
+		EBE696C52BA20EE500803154 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 		EB4893B72BA1AAA400F36B55 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -88,6 +99,9 @@
 			children = (
 				EB4893AB2BA1A4E700F36B55 /* HomeView.swift */,
 				EB4893BA2BA1ABDF00F36B55 /* WelcomeView.swift */,
+				EB4893C22BA1D74700F36B55 /* AddView.swift */,
+				EBE696C12BA20AE700803154 /* CustomPicker.swift */,
+				EBE696C52BA20EE500803154 /* ViewExtensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +109,7 @@
 		EB4893B92BA1AABB00F36B55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EB4893C42BA1E07C00F36B55 /* Habit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,7 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4893C32BA1D74700F36B55 /* AddView.swift in Sources */,
+				EBE696C22BA20AE700803154 /* CustomPicker.swift in Sources */,
+				EBE696C62BA20EE500803154 /* ViewExtensions.swift in Sources */,
+				EB4893C52BA1E07C00F36B55 /* Habit.swift in Sources */,
 				EB4893AC2BA1A4E700F36B55 /* HomeView.swift in Sources */,
+				EBE696C02BA1FF4200803154 /* HabitsViewModel.swift in Sources */,
 				EB4893BB2BA1ABDF00F36B55 /* WelcomeView.swift in Sources */,
 				EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */,
 			);

@@ -14,7 +14,7 @@ struct WelcomeView: View {
     
     var body: some View {
         ZStack {
-            Image("Background")
+            Image("WelcomeImageBackground")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
             
@@ -23,7 +23,7 @@ struct WelcomeView: View {
                 
                 VStack(spacing: 0) {
                     
-                    Image("Logo")
+                    Image("LogoImageHabit")
                     Text("habify.")
                         .foregroundColor(.white)
                         .font(Font
@@ -59,7 +59,7 @@ struct WelcomeView: View {
                         } label : {
                             Image(systemName: "arrow.forward.circle.fill")
                                 .resizable()
-                                .foregroundColor(Color("Icons"))
+                                .foregroundColor(Color("MainIconColor"))
                                 .frame(width: 30, height:30)
                         }
                     }
