@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893A92BA1A4E700F36B55 /* HabifyApp.swift */; };
-		EB4893AC2BA1A4E700F36B55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893AB2BA1A4E700F36B55 /* ContentView.swift */; };
+		EB4893AC2BA1A4E700F36B55 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893AB2BA1A4E700F36B55 /* HomeView.swift */; };
 		EB4893AE2BA1A4E900F36B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4893AD2BA1A4E900F36B55 /* Assets.xcassets */; };
 		EB4893B12BA1A4E900F36B55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4893B02BA1A4E900F36B55 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		EB4893A62BA1A4E700F36B55 /* Habify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4893A92BA1A4E700F36B55 /* HabifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabifyApp.swift; sourceTree = "<group>"; };
-		EB4893AB2BA1A4E700F36B55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB4893AB2BA1A4E700F36B55 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB4893AD2BA1A4E900F36B55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB4893B02BA1A4E900F36B55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +51,10 @@
 		EB4893A82BA1A4E700F36B55 /* Habify */ = {
 			isa = PBXGroup;
 			children = (
+				EB4893B92BA1AABB00F36B55 /* Models */,
+				EB4893B82BA1AAB100F36B55 /* Views */,
+				EB4893B72BA1AAA400F36B55 /* ViewModels */,
 				EB4893A92BA1A4E700F36B55 /* HabifyApp.swift */,
-				EB4893AB2BA1A4E700F36B55 /* ContentView.swift */,
 				EB4893AD2BA1A4E900F36B55 /* Assets.xcassets */,
 				EB4893AF2BA1A4E900F36B55 /* Preview Content */,
 			);
@@ -65,6 +67,28 @@
 				EB4893B02BA1A4E900F36B55 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EB4893B72BA1AAA400F36B55 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EB4893B82BA1AAB100F36B55 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB4893AB2BA1A4E700F36B55 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EB4893B92BA1AABB00F36B55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB4893AC2BA1A4E700F36B55 /* ContentView.swift in Sources */,
+				EB4893AC2BA1A4E700F36B55 /* HomeView.swift in Sources */,
 				EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
