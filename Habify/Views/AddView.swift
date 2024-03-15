@@ -17,6 +17,8 @@ struct AddView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    
+    
     var body: some View {
         ZStack {
             Color("AppBackground")
@@ -55,9 +57,9 @@ struct AddView: View {
                 Spacer()
                 
                 Button {
-                    
+                    print("yAHOO")
                     habitsViewModel.addHabit(title: newHabit, period: period)
-                    
+                    presentationMode.wrappedValue.dismiss()
                 } label : {
                     Text("Add it!")
                         .frame(width: 180, height: 50)
@@ -67,6 +69,29 @@ struct AddView: View {
                         .bold()
 
                 }
+                .padding(16)
+                .navigationBarTitleDisplayMode(.large) // <- Ajoutez cette ligne pour afficher le titre en mode "large"
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "arrow.backward.circle.fill")
+                                .resizable()
+                                .foregroundColor(Color("MainIconColor"))
+                                .frame(width: 39, height: 39)
+                                .aspectRatio(contentMode: .fit)
+                        }
+                    }
+
+                    ToolbarItem(placement: .principal) {
+                        Text("Add a habit")
+                            .font(.largeTitle) // <- Personnalisez la taille du titre ici
+                            .foregroundColor(Color("MainIconColor"))
+                            .bold()
+                    }
+                }
+                .navigationBarBackButtonHidden(true)
                 
                 Spacer()
                 
@@ -77,6 +102,8 @@ struct AddView: View {
 
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
-        AddView()
+        NavigationView{
+            AddView()
+        }
     }
 }
