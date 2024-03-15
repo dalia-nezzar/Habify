@@ -13,38 +13,39 @@ struct RowView: View {
     
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 4) {
-               
-                Text(habits.period.rawValue)
-                    .font(.caption)
-                    .frame(width: 80, height: 20)
-                    .bold()
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(habits.period.colorsFilter)
-                    )
-                    .foregroundColor(Color("MainIconColor"))
+        Group {
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                   
+                    Text(habits.period.rawValue)
+                        .font(.caption)
+                        .frame(width: 80, height: 20)
+                        .bold()
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(habits.period.colorsFilter)
+                        )
+                        .foregroundColor(Color("MainIconColor"))
 
-                Text(habits.title)
-                    .font(.headline)
-                    .bold()
+                    Text(habits.title)
+                        .font(.headline)
+                        .bold()
+                        .foregroundColor(Color("MainIconColor"))
+                }
+                Spacer()
+                Image(systemName: habits.state ? "checkmark.circle.fill" : "circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color("MainIconColor"))
+                
             }
-            Spacer()
-            Image(systemName: habits.state ? "checkmark.circle.fill" : "circle")
-                .resizable()
-                .frame(width: 30, height: 30)
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(Color("MainIconColor"))
-            
+            .padding(15)
+            .frame(width: 340, height: 76)
+            .background(habits.state ? habits.period.colorsHabit : Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
         }
-        .padding(15)
-        .frame(width: 340, height: 76)
-        .background(habits.state ? habits.period.colorsHabit : Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 15))
-        .shadow(color: Color.black.opacity(0.25), radius: 16, x: 0, y: 0)
-
+        .padding(.horizontal)
     }
     
 }

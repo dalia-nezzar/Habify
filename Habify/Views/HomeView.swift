@@ -23,7 +23,6 @@ struct HomeView: View {
            ZStack {
                Color("AppColorBackground")
                    .edgesIgnoringSafeArea(.all)
-               ScrollView {
                    VStack {
                        VStack(alignment: .leading) {
                            Text("Hi,")
@@ -59,17 +58,21 @@ struct HomeView: View {
                        .pickerStyle(SegmentedPickerStyle())
                        .frame(width: 300)
                        .padding()
-                           
-                       
-                       ForEach(habitsViewModel.habits) { habit in
-                           if (habit.period == period || period == .all) && (filterState == nil || (habit.state == filterState)) {
-                               RowView(habits: habit)
-                                   .onTapGesture {
-                                       habitsViewModel.updateItem(habit:habit)
-                                   }
+                  
+                       ScrollView {
+                           ForEach(habitsViewModel.habits) { habit in
+                               if (habit.period == period || period == .all) && (filterState == nil || (habit.state == filterState)) {
+                                   RowView(habits: habit)
+                                       .onTapGesture {
+                                           habitsViewModel.updateItem(habit:habit)
+                                       }
+                                   
+                               }
                            }
                        }
-                       
+                       .shadow(color: Color.black.opacity(0.20), radius: 16, x: 0, y: 0)
+
+
                        Spacer()
                        .toolbar {
                            ToolbarItem(placement: .navigationBarTrailing) {
@@ -84,7 +87,6 @@ struct HomeView: View {
                        }
                        
                    }
-               }
            }
        }
    }
