@@ -22,6 +22,8 @@
 		EB4893C32BA1D74700F36B55 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893C22BA1D74700F36B55 /* AddView.swift */; };
 		EB4893C52BA1E07C00F36B55 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893C42BA1E07C00F36B55 /* Habit.swift */; };
 		EBB8DE7B2BA48840007AF7FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8DE7A2BA48840007AF7FA /* MainView.swift */; };
+		EBB8DE7D2BA49267007AF7FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8DE7C2BA49267007AF7FA /* User.swift */; };
+		EBB8DE812BA4AA90007AF7FA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8DE802BA4AA90007AF7FA /* UserViewModel.swift */; };
 		EBE696C02BA1FF4200803154 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */; };
 		EBE696C22BA20AE700803154 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696C12BA20AE700803154 /* CustomPicker.swift */; };
 		EBE696C62BA20EE500803154 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696C52BA20EE500803154 /* ViewExtensions.swift */; };
@@ -45,6 +47,8 @@
 		EB4893C22BA1D74700F36B55 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		EB4893C42BA1E07C00F36B55 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		EBB8DE7A2BA48840007AF7FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EBB8DE7C2BA49267007AF7FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EBB8DE802BA4AA90007AF7FA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
 		EBE696C12BA20AE700803154 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		EBE696C52BA20EE500803154 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */,
+				EBB8DE802BA4AA90007AF7FA /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				EB4893C42BA1E07C00F36B55 /* Habit.swift */,
+				EBB8DE7C2BA49267007AF7FA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +239,8 @@
 				209EBB322BA4B69A001C2887 /* NotifsCustomView.swift in Sources */,
 				209EBB2C2BA48CF7001C2887 /* CreatorsView.swift in Sources */,
 				EBB8DE7B2BA48840007AF7FA /* MainView.swift in Sources */,
+				EBB8DE7D2BA49267007AF7FA /* User.swift in Sources */,
+				EBB8DE812BA4AA90007AF7FA /* UserViewModel.swift in Sources */,
 				EB4893BB2BA1ABDF00F36B55 /* WelcomeView.swift in Sources */,
 				209EBB2E2BA49FC3001C2887 /* SingleCreatorView.swift in Sources */,
 				20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */,

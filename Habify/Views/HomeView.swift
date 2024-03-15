@@ -11,11 +11,13 @@ struct HomeView: View {
     
     @State var period: Period = .all
     
-    @State private var isAllSelected = false
+    @State private var isAllSelected = true
     
     @State private var filterState: Bool? = nil
     
     @EnvironmentObject var habitsViewModel : HabitsViewModel
+    
+    @EnvironmentObject var userViewModel: UserViewModel
 
     
    var body: some View {
@@ -29,7 +31,7 @@ struct HomeView: View {
                                .font(.title3)
                                .foregroundStyle(Color(.gray))
                                .bold()
-                           Text("John Doe")
+                           Text(userViewModel.getUserName())
                                .font(.title)
                                .bold()
                                .foregroundColor(Color("MainIconColor"))
@@ -96,5 +98,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(HabitsViewModel())
+            .environmentObject(UserViewModel(user: User()))
+        
     }
 }
