@@ -52,6 +52,7 @@ enum Period: String, CaseIterable {
             return "moon.stars.fill"
         }
     }
+    
 }
 
 struct Habit: Identifiable {

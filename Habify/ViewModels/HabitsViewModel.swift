@@ -27,4 +27,12 @@ class HabitsViewModel: ObservableObject {
     func deleteHabit(indexSet: IndexSet) {
         habits.remove(atOffsets: indexSet)
     }
+    
+    func updateItem(habit: Habit) {
+        for (index, hb) in habits.enumerated() {
+            if hb.id == habit.id {
+                habits[index].state.toggle()
+            }
+        }
+    }
 }

@@ -12,6 +12,7 @@ struct HabifyApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(HabitsViewModel())
         }
     }
 }

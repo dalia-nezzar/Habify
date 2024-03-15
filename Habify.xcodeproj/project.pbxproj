@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		209EBB2A2BA4721E001C2887 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB292BA4721E001C2887 /* SwiftUIView.swift */; };
+		20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C13F5D2BA314D5000F3D47 /* CustomPickerHome.swift */; };
+		20C13F602BA31DA8000F3D47 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C13F5F2BA31DA8000F3D47 /* RowView.swift */; };
 		EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893A92BA1A4E700F36B55 /* HabifyApp.swift */; };
 		EB4893AC2BA1A4E700F36B55 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893AB2BA1A4E700F36B55 /* HomeView.swift */; };
 		EB4893AE2BA1A4E900F36B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4893AD2BA1A4E900F36B55 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		209EBB292BA4721E001C2887 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		20C13F5D2BA314D5000F3D47 /* CustomPickerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerHome.swift; sourceTree = "<group>"; };
+		20C13F5F2BA31DA8000F3D47 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		EB4893A62BA1A4E700F36B55 /* Habify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4893A92BA1A4E700F36B55 /* HabifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabifyApp.swift; sourceTree = "<group>"; };
 		EB4893AB2BA1A4E700F36B55 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 				EB4893C22BA1D74700F36B55 /* AddView.swift */,
 				EBE696C12BA20AE700803154 /* CustomPicker.swift */,
 				EBE696C52BA20EE500803154 /* ViewExtensions.swift */,
+				20C13F5D2BA314D5000F3D47 /* CustomPickerHome.swift */,
+				20C13F5F2BA31DA8000F3D47 /* RowView.swift */,
+				209EBB292BA4721E001C2887 /* SwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,12 +211,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4893C32BA1D74700F36B55 /* AddView.swift in Sources */,
+				20C13F602BA31DA8000F3D47 /* RowView.swift in Sources */,
+				209EBB2A2BA4721E001C2887 /* SwiftUIView.swift in Sources */,
 				EBE696C22BA20AE700803154 /* CustomPicker.swift in Sources */,
 				EBE696C62BA20EE500803154 /* ViewExtensions.swift in Sources */,
 				EB4893C52BA1E07C00F36B55 /* Habit.swift in Sources */,
 				EB4893AC2BA1A4E700F36B55 /* HomeView.swift in Sources */,
 				EBE696C02BA1FF4200803154 /* HabitsViewModel.swift in Sources */,
 				EB4893BB2BA1ABDF00F36B55 /* WelcomeView.swift in Sources */,
+				20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */,
 				EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
