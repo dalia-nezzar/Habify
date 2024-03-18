@@ -12,7 +12,6 @@ struct WelcomeView: View {
     @EnvironmentObject var user: User
     @State private var nameEntered = false
     @State private var nameUser: String = ""
-    @EnvironmentObject var userViewModel: UserViewModel
 
     
     var body: some View {
@@ -53,7 +52,7 @@ struct WelcomeView: View {
                                 .font(.system(size: 15))
                             
                             Button(action: {
-                                userViewModel.setUser(name: nameUser)
+                                user.nameUser = nameUser
                                 self.nameEntered = true
                                 print(self.nameUser)
                             }) {
@@ -70,7 +69,7 @@ struct WelcomeView: View {
                 }
             } else {
                 MainView()
-                    .environmentObject(userViewModel.user)
+                    .environmentObject(user)
             }
         }
     }
@@ -80,6 +79,6 @@ struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()
             .environmentObject(User())
-            .environmentObject(UserViewModel(user: User()))
+        
     }
 }

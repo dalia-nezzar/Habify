@@ -17,7 +17,7 @@ struct HomeView: View {
     
     @EnvironmentObject var habitsViewModel : HabitsViewModel
     
-    @EnvironmentObject var userViewModel: UserViewModel
+    @EnvironmentObject var user: User
 
     
    var body: some View {
@@ -31,7 +31,7 @@ struct HomeView: View {
                                .font(.title3)
                                .foregroundStyle(Color(.gray))
                                .bold()
-                           Text(userViewModel.getUserName())
+                           Text(user.nameUser)
                                .font(.title)
                                .bold()
                                .foregroundColor(Color("MainIconColor"))
@@ -98,7 +98,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(HabitsViewModel())
-            .environmentObject(UserViewModel(user: User()))
+            .environmentObject(User())
         
     }
 }

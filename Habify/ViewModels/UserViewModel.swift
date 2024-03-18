@@ -10,7 +10,9 @@ import Combine
 
 class UserViewModel: ObservableObject {
     @Published var user: User
-        
+    
+    static let shared = UserViewModel(user: User())
+
     init(user: User) {
         self.user = user
     }

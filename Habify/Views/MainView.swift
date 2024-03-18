@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    
-    
+    @EnvironmentObject var user : User
     @EnvironmentObject var habitsViewModel : HabitsViewModel
     
     var body: some View {
@@ -19,14 +18,13 @@ struct MainView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                         .environment(\.symbolVariants, .none)
-                        .foregroundColor(Color("MainGreen"))
                 }
             AddView()
                 .tabItem {
                     Label("Overview", systemImage: "chart.bar")
                         .environment(\.symbolVariants, .none)
                 }
-            WelcomeView()
+            SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "slider.horizontal.3")
                         .environment(\.symbolVariants, .none)
@@ -43,5 +41,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(HabitsViewModel())
+            .environmentObject(User())
     }
 }

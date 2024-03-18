@@ -10,12 +10,11 @@ import SwiftUI
 @main
 struct HabifyApp: App {
     var body: some Scene {
-
-
         WindowGroup {
+            
             WelcomeView()
                 .environmentObject(HabitsViewModel())
-                .environmentObject(UserViewModel(user: User()))
+                .environmentObject(User())
         }
     }
 }

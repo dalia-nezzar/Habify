@@ -57,7 +57,6 @@ struct AddView: View {
                 Spacer()
                 
                 Button {
-                    print("yAHOO")
                     habitsViewModel.addHabit(title: newHabit, period: period)
                     presentationMode.wrappedValue.dismiss()
                 } label : {
@@ -70,7 +69,7 @@ struct AddView: View {
 
                 }
                 .padding(16)
-                .navigationBarTitleDisplayMode(.large) // <- Ajoutez cette ligne pour afficher le titre en mode "large"
+                .navigationBarTitleDisplayMode(.large)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(action: {
@@ -86,7 +85,7 @@ struct AddView: View {
 
                     ToolbarItem(placement: .principal) {
                         Text("Add a habit")
-                            .font(.largeTitle) // <- Personnalisez la taille du titre ici
+                            .font(.largeTitle)
                             .foregroundColor(Color("MainIconColor"))
                             .bold()
                     }
