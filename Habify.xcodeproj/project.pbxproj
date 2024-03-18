@@ -138,7 +138,6 @@
 				209EBB312BA4B69A001C2887 /* NotifsCustomView.swift */,
 				EB5D73ED2BA4BDD1007D1C9D /* SettingsView.swift */,
 				EBA7B8A22BA876AC003D93C7 /* ProfileEditView.swift */,
-				2074F1972BA88AB400117EC4 /* NotificationManager.swift */,
 				2074F19B2BA88B3500117EC4 /* CustomPickerNotifs.swift */,
 			);
 			path = Views;
@@ -147,6 +146,7 @@
 		EB4893B92BA1AABB00F36B55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2074F1972BA88AB400117EC4 /* NotificationManager.swift */,
 				EB4893C42BA1E07C00F36B55 /* Habit.swift */,
 				EBB8DE7C2BA49267007AF7FA /* User.swift */,
 			);
