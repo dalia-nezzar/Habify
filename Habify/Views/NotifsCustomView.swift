@@ -31,22 +31,22 @@ struct NotifsCustomView: View {
                     CustomPickerNotifs(viewModel: morningViewModel, icon: "sunrise.fill", isSelected: false, action: {
                         self.morningViewModel.selectedHour = morningHour
                         self.morningViewModel.isSheetPresented = true
-                        if let components = NotificationManager.shared.convertTimeStringToComponents(time: morningHour) {
-                                NotificationManager.shared.scheduleNotification(hour: components.hour, minute: components.minute, second: components.second, body: "This is your morning notification")
+                        if let components = NotifsViewModel.shared.convertTimeStringToComponents(time: morningHour) {
+                            NotifsViewModel.shared.scheduleNotification(hour: components.hour, minute: components.minute, second: components.second, body: "This is your morning notification")
                             }
                     }, hour: $morningHour)
                     CustomPickerNotifs(viewModel: afternoonViewModel, icon: "moon.fill", isSelected: false, action: {
                         self.afternoonViewModel.selectedHour = afternoonHour
                         self.afternoonViewModel.isSheetPresented = true
-                        if let components = NotificationManager.shared.convertTimeStringToComponents(time: afternoonHour) {
-                                NotificationManager.shared.scheduleNotification(hour: components.hour, minute: components.minute, second: components.second, body: "This is your afternoon notification")
+                        if let components = NotifsViewModel.shared.convertTimeStringToComponents(time: afternoonHour) {
+                            NotifsViewModel.shared.scheduleNotification(hour: components.hour, minute: components.minute, second: components.second, body: "This is your afternoon notification")
                             }
                     }, hour: $afternoonHour)
                     CustomPickerNotifs(viewModel: nightViewModel, icon: "sun.max.fill", isSelected: false, action: {
                         self.nightViewModel.selectedHour = eveningHour
                         self.nightViewModel.isSheetPresented = true
-                        if let components = NotificationManager.shared.convertTimeStringToComponents(time: eveningHour) {
-                                NotificationManager.shared.scheduleNotification(hour: components.hour, minute: components.minute, second: components.second, body: "This is your night notification")
+                        if let components = NotifsViewModel.shared.convertTimeStringToComponents(time: eveningHour) {
+                            NotifsViewModel.shared.scheduleNotification(hour: components.hour, minute: components.minute, second: components.second, body: "This is your night notification")
                             }
                     }, hour: $eveningHour)
                 }

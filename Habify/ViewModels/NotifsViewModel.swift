@@ -8,8 +8,8 @@
 import Foundation
 import UserNotifications
 
-class NotificationManager: ObservableObject {
-    static let shared = NotificationManager()
+class NotifsViewModel: ObservableObject {
+    static let shared = NotifsViewModel()
 
     private init() {}
 

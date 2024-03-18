@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2074F1982BA88AB400117EC4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074F1972BA88AB400117EC4 /* NotificationManager.swift */; };
+		2074F1982BA88AB400117EC4 /* NotifsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074F1972BA88AB400117EC4 /* NotifsViewModel.swift */; };
 		2074F19A2BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074F1992BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift */; };
 		2074F19C2BA88B3500117EC4 /* CustomPickerNotifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074F19B2BA88B3500117EC4 /* CustomPickerNotifs.swift */; };
 		209EBB2C2BA48CF7001C2887 /* CreatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB2B2BA48CF7001C2887 /* CreatorsView.swift */; };
@@ -34,7 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2074F1972BA88AB400117EC4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		2074F1972BA88AB400117EC4 /* NotifsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifsViewModel.swift; sourceTree = "<group>"; };
 		2074F1992BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerNotifsViewModel.swift; sourceTree = "<group>"; };
 		2074F19B2BA88B3500117EC4 /* CustomPickerNotifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerNotifs.swift; sourceTree = "<group>"; };
 		209EBB2B2BA48CF7001C2887 /* CreatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsView.swift; sourceTree = "<group>"; };
@@ -115,6 +115,7 @@
 		EB4893B72BA1AAA400F36B55 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2074F1972BA88AB400117EC4 /* NotifsViewModel.swift */,
 				EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */,
 				2074F1992BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift */,
 			);
@@ -146,7 +147,6 @@
 		EB4893B92BA1AABB00F36B55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2074F1972BA88AB400117EC4 /* NotificationManager.swift */,
 				EB4893C42BA1E07C00F36B55 /* Habit.swift */,
 				EBB8DE7C2BA49267007AF7FA /* User.swift */,
 			);
@@ -257,7 +257,7 @@
 				EBA7B8A32BA876AC003D93C7 /* ProfileEditView.swift in Sources */,
 				EB4893BB2BA1ABDF00F36B55 /* WelcomeView.swift in Sources */,
 				2074F19C2BA88B3500117EC4 /* CustomPickerNotifs.swift in Sources */,
-				2074F1982BA88AB400117EC4 /* NotificationManager.swift in Sources */,
+				2074F1982BA88AB400117EC4 /* NotifsViewModel.swift in Sources */,
 				209EBB2E2BA49FC3001C2887 /* SingleCreatorView.swift in Sources */,
 				20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */,
 				EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */,
