@@ -122,7 +122,7 @@ struct SettingsView: View {
                             .padding(.top, 20)
                         
                         
-                        NavigationLink(destination: EmptyView()) {
+                        NavigationLink(destination: NotifsView()) {
                             HStack{
                                 Image(systemName: "bell.fill")
                                     .resizable()

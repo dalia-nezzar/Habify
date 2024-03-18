@@ -15,6 +15,9 @@ struct NotifsView: View {
     @State private var sound = true
     @State private var vibration = true
     
+    @Environment(\.presentationMode) var presentationMode
+
+    
     var body: some View {
         ZStack {
             Color("AppBackground")
@@ -29,28 +32,33 @@ struct NotifsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 40)
                 
-                HStack{
-                    Image(systemName: "bell.badge")
-                        .foregroundColor(.white)
-                        .frame(width: 49, height: 49)
-                        .clipShape(Circle())
-                        .background(
-                            Circle()
-                                .fill(Color("MainGreen"))
-                                .frame(width: 39, height: 39)
-                        )
-                    Text("Custom my notifications")
-                        .padding(10)
-                        .font(.system(size:18))
-                        .bold()
+                
+                NavigationLink(destination: NotifsCustomView()) {
+                    HStack{
+                        Image(systemName: "bell.badge")
+                            .foregroundColor(.white)
+                            .frame(width: 49, height: 49)
+                            .clipShape(Circle())
+                            .background(
+                                Circle()
+                                    .fill(Color("MainGreen"))
+                                    .frame(width: 39, height: 39)
+                            )
+                        Text("Custom my notifications")
+                            .padding(10)
+                            .font(.system(size:18))
+                            .foregroundColor(Color("MainIconColor"))
+                            .bold()
+                    }
+                    .frame(width: 319, height: 61)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 }
-                .frame(width: 319, height: 61)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 16))
-                .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
 
                 HStack{
                     Text("Push notifications")
+                        .foregroundColor(Color("MainIconColor"))
                         .font(.system(size:16))
                         .bold()
                     Spacer()
@@ -68,6 +76,7 @@ struct NotifsView: View {
                 HStack{
                     Text("In-app notifications")
                         .font(.system(size:16))
+                        .foregroundColor(Color("MainIconColor"))
                         .bold()
                     Spacer()
                     Toggle("", isOn: $inapp)
@@ -90,6 +99,7 @@ struct NotifsView: View {
                 
                 HStack{
                     Text("Message")
+                        .foregroundColor(Color("MainIconColor"))
                         .font(.system(size:16))
                         .bold()
                     Spacer()
@@ -106,6 +116,7 @@ struct NotifsView: View {
                 
                 HStack{
                     Text("Reminders")
+                        .foregroundColor(Color("MainIconColor"))
                         .font(.system(size:16))
                         .bold()
                     Spacer()
@@ -129,6 +140,7 @@ struct NotifsView: View {
                 
                 HStack{
                     Text("Sound")
+                        .foregroundColor(Color("MainIconColor"))
                         .font(.system(size:16))
                         .bold()
                     Spacer()
@@ -145,6 +157,7 @@ struct NotifsView: View {
                 
                 HStack{
                     Text("Vibration")
+                        .foregroundColor(Color("MainIconColor"))
                         .font(.system(size:16))
                         .bold()
                     Spacer()
@@ -161,6 +174,31 @@ struct NotifsView: View {
                 
                 
                 
+                .navigationBarTitleDisplayMode(.large)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "arrow.backward.circle.fill")
+                                .resizable()
+                                .foregroundColor(Color("MainIconColor"))
+                                .frame(width: 39, height: 39)
+                                .aspectRatio(contentMode: .fit)
+                        }
+                    }
+
+                    ToolbarItem(placement: .principal) {
+                        Text("Notifications")
+                            .font(.largeTitle)
+                            .foregroundColor(Color("MainIconColor"))
+                            .bold()
+                    }
+                    
+                    
+                }
+                .navigationBarBackButtonHidden(true)
+                
             }
         }
     }
@@ -168,6 +206,8 @@ struct NotifsView: View {
 
 struct NotifsView_Previews: PreviewProvider {
     static var previews: some View {
-        NotifsView()
+        NavigationView {
+            NotifsView()
+        }
     }
 }
