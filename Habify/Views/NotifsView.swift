@@ -33,7 +33,7 @@ struct NotifsView: View {
                     .padding(.leading, 40)
                 
                 
-                NavigationLink(destination: NotifsCustomView()) {
+                NavigationLink(destination: NotifsCustomView(morningViewModel: CustomPickerNotifsViewModel(), afternoonViewModel: CustomPickerNotifsViewModel(), nightViewModel: CustomPickerNotifsViewModel())) {
                     HStack{
                         Image(systemName: "bell.badge")
                             .foregroundColor(.white)
