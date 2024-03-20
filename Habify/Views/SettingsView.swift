@@ -38,9 +38,9 @@ struct SettingsView: View {
                     HStack(alignment: .center) {
                         Image(user.profilePhoto)
                             .resizable()
-                            .cornerRadius(300)
+                            .clipShape(Circle())
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 81)
+                            .frame(width: 81, height:81)
                             .padding(.horizontal)
                             .overlay(
                                 Circle()
@@ -154,7 +154,7 @@ struct SettingsView: View {
                             .padding(.top, 20)
                         
                         
-                        NavigationLink(destination: EmptyView()) {
+                        NavigationLink(destination: CreatorsView()) {
                             HStack{
                                 Image("LogoImageHabit")
                                     .resizable()

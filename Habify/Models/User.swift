@@ -12,5 +12,12 @@ import Combine
 class User: ObservableObject {
     @Published var nameUser: String = "John Doe"
     @Published var profilePhoto: String = "IconUser"
+
+    func loadImage(selectedImage: UIImage) {
+        if let imageData = selectedImage.jpegData(compressionQuality: 0.5) {
+            let base64String = imageData.base64EncodedString()
+            profilePhoto = base64String
+        }
+    }
     
 }

@@ -10,11 +10,16 @@ import SwiftUI
 struct ProfileEditView: View {
     
     @EnvironmentObject var user: User
+    @EnvironmentObject var habitsViewModel: HabitsViewModel
     
     @Environment(\.presentationMode) var presentationMode
 
-    
     @State var newName = ""
+    @State var showingImagePicker = false
+    @State var selectedImage: UIImage?
+    
+    // Variable pour contrôler l'affichage de la TabView
+    @State private var showTabView = false
 
     var body: some View {
         ZStack {
@@ -22,34 +27,64 @@ struct ProfileEditView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                
-                Image(user.profilePhoto)
-                    .resizable()
-                    .cornerRadius(300)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150)
-                    .padding(.horizontal)
-                    .overlay(
-                        Circle()
-                            .stroke(Color("MainGreen"), lineWidth: 6)
-                    )
-                    .overlay(
-                        Button {
-                            // TODO: Open gallery and select image in png/jpg/jpeg
-                        } label: {
-                            Image(systemName: "square.and.pencil.circle.fill") // icône de crayon
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50)
-                                .foregroundColor(Color("MainGreen"))
-                                .background(
-                                    Circle()
-                                        .fill(.white)
-                                )
-                                .padding(.bottom, 0)
-                        },
-                        alignment: .bottomTrailing
-                    )
+                if let selectedImage = selectedImage {
+                    Image(uiImage: selectedImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 150, height: 150)
+                        .clipped()
+                        .clipShape(Circle())
+                        .padding(.horizontal)
+                        .overlay(
+                            Circle()
+                                .stroke(Color("MainGreen"), lineWidth: 6)
+                        )
+                        .overlay(
+                            Button(action: {
+                                showingImagePicker.toggle()
+                            }) {
+                                Image(systemName: "square.and.pencil.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50)
+                                    .foregroundColor(Color("MainGreen"))
+                                    .background(
+                                        Circle()
+                                            .fill(.white)
+                                    )
+                                    .padding(.bottom, 0)
+                            },
+                            alignment: .bottomTrailing
+                        )
+                } else {
+                    Image(user.profilePhoto)
+                        .resizable()
+                        .clipShape(Circle())
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 150, height: 150)
+                        .padding(.horizontal)
+                        .overlay(
+                            Circle()
+                                .stroke(Color("MainGreen"), lineWidth: 6)
+                        )
+                        .overlay(
+                            Button(action: {
+                                showingImagePicker.toggle()
+                            }) {
+                                Image(systemName: "square.and.pencil.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50)
+                                    .foregroundColor(Color("MainGreen"))
+                                    .background(
+                                        Circle()
+                                            .fill(.white)
+                                    )
+                                    .padding(.bottom, 0)
+                            },
+                            alignment: .bottomTrailing
+                        )
+                }
                 
                 Text("Edit my name")
                     .font(.title2)
@@ -69,11 +104,11 @@ struct ProfileEditView: View {
                 
                 Spacer()
                 
-                Button {
-                    print(newName)
+                Button(action: {
+                    print(newName, user.profilePhoto)
                     user.nameUser = newName
                     presentationMode.wrappedValue.dismiss()
-                } label : {
+                }) {
                     Text("Edit")
                         .frame(width: 180, height: 50)
                         .background(Color("MainGreen"))
@@ -81,36 +116,49 @@ struct ProfileEditView: View {
                         .cornerRadius(33)
                         .bold()
                         .padding(.bottom, 30)
-
                 }
-                
-                .navigationBarTitleDisplayMode(.large)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Image(systemName: "arrow.backward.circle.fill")
-                                .resizable()
-                                .foregroundColor(Color("MainIconColor"))
-                                .frame(width: 39, height: 39)
-                                .aspectRatio(contentMode: .fit)
-                        }
-                    }
-
-                    ToolbarItem(placement: .principal) {
-                        Text("Edit my profile")
-                            .font(.largeTitle)
-                            .foregroundColor(Color("MainIconColor"))
-                            .bold()
-                    }
-                }
-                .navigationBarBackButtonHidden(true)
-                
             }
+        }
+        .sheet(isPresented: $showingImagePicker, onDismiss: {
+            guard let selectedImage = selectedImage else { return }
+            user.loadImage(selectedImage: selectedImage)
+        }) {
+            ImagePicker(selectedImage: $selectedImage, user: user, sourceType: .photoLibrary, mediaTypes: ["public.image"], allowsEditing: true)
+        }
+        .navigationBarTitleDisplayMode(.large)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.backward.circle.fill")
+                        .resizable()
+                        .foregroundColor(Color("MainIconColor"))
+                        .frame(width: 39, height: 39)
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+
+            ToolbarItem(placement: .principal) {
+                Text("Edit my profile")
+                    .font(.largeTitle)
+                    .foregroundColor(Color("MainIconColor"))
+                    .bold()
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .onAppear {
+            // Masquer la TabView lors de l'affichage de cette vue
+            showTabView = false
+        }
+        .onDisappear {
+            // Afficher à nouveau la TabView lors de la disparition de cette vue
+            showTabView = true
         }
     }
 }
+
+
 
 struct ProfileEditView_Previews: PreviewProvider {
     static var previews: some View {

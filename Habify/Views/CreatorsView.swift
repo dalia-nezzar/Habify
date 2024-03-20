@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CreatorsView : View{
     
+    @Environment(\.presentationMode) var presentationMode
+
+    
     var body: some View {
         ZStack {
             Color("AppBackground")
@@ -27,6 +30,29 @@ struct CreatorsView : View{
                     .multilineTextAlignment(.center)
                     .font(.system(size: 20))
             }
+            
+            .navigationBarTitleDisplayMode(.large)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarLeading) {
+                                    Button(action: {
+                                        presentationMode.wrappedValue.dismiss()
+                                    }) {
+                                        Image(systemName: "arrow.backward.circle.fill")
+                                            .resizable()
+                                            .foregroundColor(Color("MainIconColor"))
+                                            .frame(width: 39, height: 39)
+                                            .aspectRatio(contentMode: .fit)
+                                    }
+                                }
+
+                                ToolbarItem(placement: .principal) {
+                                    Text("The Team habify")
+                                        .font(.largeTitle)
+                                        .foregroundColor(Color("MainIconColor"))
+                                        .bold()
+                                }
+                            }
+                            .navigationBarBackButtonHidden(true)
         }
     }
     
@@ -34,6 +60,8 @@ struct CreatorsView : View{
 
 struct CreatorsView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatorsView()
+        NavigationView {
+            CreatorsView()
+        }
     }
 }
