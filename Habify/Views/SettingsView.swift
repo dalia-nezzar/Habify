@@ -35,44 +35,46 @@ struct SettingsView: View {
                     }
                     .padding(20)
                     
-                    HStack(alignment: .center) {
-                        Image(user.profilePhoto)
-                            .resizable()
-                            .clipShape(Circle())
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 81, height:81)
-                            .padding(.horizontal)
-                            .overlay(
-                                Circle()
-                                    .stroke(Color("MainGreen"), lineWidth: 6)
-                            )
-                        
-                        
-                        VStack(alignment: .leading, spacing: 5) {
-                            Text(user.nameUser)
-                                .font(.title2)
-                                .bold()
+                    NavigationLink(destination: ProfileEditView()) {
+                        HStack(alignment: .center) {
+                            Image(user.profilePhoto)
+                                .resizable()
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 81, height:81)
+                                .padding(.horizontal)
+                                .overlay(
+                                    Circle()
+                                        .stroke(Color("MainGreen"), lineWidth: 6)
+                                )
                             
-                            Text("Edit personal profile")
-                                .font(.system(size : 15))
-                                .bold()
-                                .foregroundColor(Color("AltColorText"))
                             
-                        }
-                        
-                        Spacer()
-                        
-                        NavigationLink(destination: ProfileEditView()) {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(user.nameUser)
+                                    .font(.title2)
+                                    .bold()
+                                    .foregroundColor(Color("MainIconColor"))
+                                
+                                Text("Edit personal profile")
+                                    .font(.system(size : 15))
+                                    .bold()
+                                    .foregroundColor(Color("AltColorText"))
+                                
+                            }
+                            
+                            Spacer()
+                            
                             Image(systemName: "chevron.right.circle.fill")
                                 .resizable()
                                 .frame(width: 28, height:28)
                                 .foregroundColor(Color("MainIconColor"))
                                 .padding(.horizontal)
+                            
                         }
-
+                        .background(.clear)
+                        .padding(.horizontal)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .padding(.horizontal)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     
                     
                     VStack {
