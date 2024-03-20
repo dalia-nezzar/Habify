@@ -16,6 +16,8 @@ struct NotifsView: View {
     @State private var vibration = true
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var notifsViewModel = NotifsViewModel.shared
 
     
     var body: some View {
@@ -66,6 +68,11 @@ struct NotifsView: View {
                         .labelsHidden()
                         .toggleStyle(SwitchToggleStyle(tint: Color("MainGreen")))
                         .padding()
+                        .onChange(of: push) { newValue in
+                            if newValue {
+                                notifsViewModel.requestAuthorization()
+                            }
+                        }
                 }
                 .padding(.leading, 15)
                 .frame(width: 319, height: 61)

@@ -37,6 +37,45 @@ class NotifsViewModel: ObservableObject {
 
         UNUserNotificationCenter.current().add(request)
     }
+    
+    func sendNotification() {
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "Do your task with Habify"
+        content.body = "Don't forget to check Habify! You still have tasks to complete. Stay on track and reach your goals."
+        content.sound = .default
+        content.userInfo = ["value": "Data with local notification"]
+        
+        // Créer le déclencheur de répétition toutes les 1 minute
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        
+        // Créer la demande de notification
+        let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+        
+        // Ajouter la demande de notification au centre de notification
+        center.add(request) { error in
+            if let error = error {
+                print("Erreur lors de l'ajout de la notification: \(error.localizedDescription)")
+            } else {
+                print("Notification ajoutée avec succès.")
+            }
+        }
+    }
+
+
+
+
+    func someActionThatTriggersNotification() {
+        // Exemple de logique métier : déclencher la notification seulement si une certaine condition est remplie
+        let conditionIsMet = true // Mettez ici votre propre logique métier
+
+        // Si la condition est remplie, déclencher la notification
+        if conditionIsMet {
+            // Appeler sendNotification() lorsque nécessaire
+            sendNotification()
+        }
+    }
+
 
     func convertTimeStringToComponents(time: String) -> (hour: Int, minute: Int, second: Int)? {
         let hourMinuteSecond = time.split(separator: ":")

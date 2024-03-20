@@ -11,7 +11,7 @@ import Combine
 
 @main
 struct HabifyApp: App {
-    @StateObject var notificationManager = NotificationManager.shared
+    @StateObject var notificationManager = NotifsViewModel.shared
     var body: some Scene {
         WindowGroup {
             
@@ -20,6 +20,7 @@ struct HabifyApp: App {
                 .environmentObject(User())
                 .onAppear {
                     notificationManager.requestAuthorization()
+                    notificationManager.sendNotification()
                 }
         }
     }
