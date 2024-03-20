@@ -29,6 +29,7 @@
 		EBB8DE7B2BA48840007AF7FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8DE7A2BA48840007AF7FA /* MainView.swift */; };
 		EBB8DE7D2BA49267007AF7FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB8DE7C2BA49267007AF7FA /* User.swift */; };
 		EBE2F5472BAB135200E6FB2B /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2F5462BAB135200E6FB2B /* ImagePickerViewController.swift */; };
+		EBE2F54B2BAB288700E6FB2B /* DeletableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2F54A2BAB288700E6FB2B /* DeletableRowView.swift */; };
 		EBE696C02BA1FF4200803154 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */; };
 		EBE696C22BA20AE700803154 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696C12BA20AE700803154 /* CustomPicker.swift */; };
 		EBE696C62BA20EE500803154 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE696C52BA20EE500803154 /* ViewExtensions.swift */; };
@@ -59,6 +60,7 @@
 		EBB8DE7A2BA48840007AF7FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EBB8DE7C2BA49267007AF7FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EBE2F5462BAB135200E6FB2B /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		EBE2F54A2BAB288700E6FB2B /* DeletableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableRowView.swift; sourceTree = "<group>"; };
 		EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
 		EBE696C12BA20AE700803154 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		EBE696C52BA20EE500803154 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				EB5D73ED2BA4BDD1007D1C9D /* SettingsView.swift */,
 				EBA7B8A22BA876AC003D93C7 /* ProfileEditView.swift */,
 				2074F19B2BA88B3500117EC4 /* CustomPickerNotifs.swift */,
+				EBE2F54A2BAB288700E6FB2B /* DeletableRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				EBE2F5472BAB135200E6FB2B /* ImagePickerViewController.swift in Sources */,
 				2074F19C2BA88B3500117EC4 /* CustomPickerNotifs.swift in Sources */,
 				2074F1982BA88AB400117EC4 /* NotifsViewModel.swift in Sources */,
+				EBE2F54B2BAB288700E6FB2B /* DeletableRowView.swift in Sources */,
 				209EBB2E2BA49FC3001C2887 /* SingleCreatorView.swift in Sources */,
 				20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */,
 				EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */,

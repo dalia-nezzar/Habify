@@ -24,8 +24,14 @@ class HabitsViewModel: ObservableObject {
         habits.append(newHabit)
     }
     
-    func deleteHabit(indexSet: IndexSet) {
-        habits.remove(atOffsets: indexSet)
+    func onDeleteHabit(at offsets: IndexSet) {
+        habits.remove(atOffsets: offsets)
+    }
+    
+    func deleteHabit(habit: Habit) {
+        if let index = habits.firstIndex(where: { $0.id == habit.id }) {
+            habits.remove(at: index)
+        }
     }
     
     func updateItem(habit: Habit) {

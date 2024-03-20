@@ -61,14 +61,15 @@ struct HomeView: View {
                        .frame(width: 300)
                        .padding()
                   
-                       ScrollView {
-                           ForEach(habitsViewModel.habits) { habit in
-                               if (habit.period == period || period == .all) && (filterState == nil || (habit.state == filterState)) {
-                                   RowView(habits: habit)
-                                       .onTapGesture {
-                                           habitsViewModel.updateItem(habit:habit)
-                                       }
-                                   
+                       ScrollView(.vertical, showsIndicators: false) {
+                           LazyVStack {
+                               ForEach(habitsViewModel.habits) { habit in
+                                   if (habit.period == period || period == .all) && (filterState == nil || (habit.state == filterState)) {
+                                       DeletableRowView(habits: habit)
+                                           .onTapGesture {
+                                               habitsViewModel.updateItem(habit:habit)
+                                           }
+                                   }
                                }
                            }
                        }
@@ -89,6 +90,7 @@ struct HomeView: View {
                        }
                        
                    }
+                   .contentShape(Rectangle())
            }
        }
    }

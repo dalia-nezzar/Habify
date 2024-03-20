@@ -79,6 +79,9 @@ struct NotifsView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                .onTapGesture {
+                    push.toggle()
+                }
                 
                 HStack{
                     Text("In-app notifications")
@@ -96,6 +99,9 @@ struct NotifsView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                .onTapGesture {
+                    inapp.toggle()
+                }
                 
                 Text("Message settings")
                     .font(.title2)
@@ -120,6 +126,9 @@ struct NotifsView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                .onTapGesture {
+                    message.toggle()
+                }
                 
                 HStack{
                     Text("Reminders")
@@ -137,6 +146,9 @@ struct NotifsView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                .onTapGesture {
+                    remind.toggle()
+                }
                 
                 Text("Sound settings")
                     .font(.title2)
@@ -161,6 +173,9 @@ struct NotifsView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                .onTapGesture {
+                    sound.toggle()
+                }
                 
                 HStack{
                     Text("Vibration")
@@ -178,6 +193,9 @@ struct NotifsView: View {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                .onTapGesture {
+                    vibration.toggle()
+                }
                 
                 
                 
