@@ -180,7 +180,7 @@ struct SettingsView: View {
                         }
                         
                         
-                        NavigationLink(destination: EmptyView()) {
+                        NavigationLink(destination: FeedbackView()) {
                             HStack{
                                 Image(systemName: "hands.sparkles.fill")
                                     .resizable()

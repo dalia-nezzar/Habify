@@ -17,8 +17,8 @@ struct CreatorsView : View{
             Color("AppBackground")
             .edgesIgnoringSafeArea(.all)
             VStack {
-                SingleCreatorView(nom: "Dalia Nezzar", description: "Student, designer and developer of habify. ! Always loved coding always will.", image: "DaliaIcon")
-                SingleCreatorView(nom: "Mame Diarra Thiam", description: "Student, designer and developer of habify!", image: "DiarraIcon")
+                SingleCreatorView(nom: "Dalia Nezzar", description: "Student, designer and developer of habify. ! Always loved coding always will.", image: "DaliaIcon", emailAddress: "nezzar.dalia@gmail.com", phoneNumber: "0769989618", linkedin: "https://fr.linkedin.com/in/dalia-nezzar-302984299", github: "https://github.com/dalia-nezzar")
+                SingleCreatorView(nom: "Mame Diarra Thiam", description: "Student, designer and developer of habify!", image: "DiarraIcon", emailAddress: "diathiam2004@gmail.com", phoneNumber: "0769038683", linkedin: "https://fr.linkedin.com/in/mame-diarra-thiam-351a85281", github: "https://github.com/diarrathiamm")
                 Spacer()
                 Image("LogoInfo")
                     .resizable()
