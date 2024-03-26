@@ -19,7 +19,7 @@ struct MainView: View {
                     Label("Home", systemImage: "house")
                         .environment(\.symbolVariants, .none)
                 }
-            AddView()
+            StatisticsView()
                 .tabItem {
                     Label("Overview", systemImage: "chart.bar")
                         .environment(\.symbolVariants, .none)

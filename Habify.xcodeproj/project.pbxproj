@@ -14,6 +14,9 @@
 		209EBB2E2BA49FC3001C2887 /* SingleCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB2D2BA49FC3001C2887 /* SingleCreatorView.swift */; };
 		209EBB302BA4A86B001C2887 /* NotifsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB2F2BA4A86B001C2887 /* NotifsView.swift */; };
 		209EBB322BA4B69A001C2887 /* NotifsCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB312BA4B69A001C2887 /* NotifsCustomView.swift */; };
+		20AFDC3C2BB2D96400084182 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFDC3B2BB2D96400084182 /* StatisticsView.swift */; };
+		20AFDC3E2BB2D99700084182 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFDC3D2BB2D99700084182 /* StatisticsViewModel.swift */; };
+		20AFDC402BB2D9B000084182 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFDC3F2BB2D9B000084182 /* Statistics.swift */; };
 		20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C13F5D2BA314D5000F3D47 /* CustomPickerHome.swift */; };
 		20C13F602BA31DA8000F3D47 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C13F5F2BA31DA8000F3D47 /* RowView.swift */; };
 		EB4893AA2BA1A4E700F36B55 /* HabifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4893A92BA1A4E700F36B55 /* HabifyApp.swift */; };
@@ -46,6 +49,9 @@
 		209EBB2D2BA49FC3001C2887 /* SingleCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCreatorView.swift; sourceTree = "<group>"; };
 		209EBB2F2BA4A86B001C2887 /* NotifsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifsView.swift; sourceTree = "<group>"; };
 		209EBB312BA4B69A001C2887 /* NotifsCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifsCustomView.swift; sourceTree = "<group>"; };
+		20AFDC3B2BB2D96400084182 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		20AFDC3D2BB2D99700084182 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		20AFDC3F2BB2D9B000084182 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		20C13F5D2BA314D5000F3D47 /* CustomPickerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerHome.swift; sourceTree = "<group>"; };
 		20C13F5F2BA31DA8000F3D47 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		EB4893A62BA1A4E700F36B55 /* Habify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +135,7 @@
 				2074F1972BA88AB400117EC4 /* NotifsViewModel.swift */,
 				EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */,
 				2074F1992BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift */,
+				20AFDC3D2BB2D99700084182 /* StatisticsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 				EBE2F54C2BAB37DD00E6FB2B /* FeedbackView.swift */,
 				EBE2F54E2BAB392900E6FB2B /* StarView.swift */,
 				EBB4DA6E2BAC51CE00A07342 /* CustomTextField.swift */,
+				20AFDC3B2BB2D96400084182 /* StatisticsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 			children = (
 				EB4893C42BA1E07C00F36B55 /* Habit.swift */,
 				EBB8DE7C2BA49267007AF7FA /* User.swift */,
+				20AFDC3F2BB2D9B000084182 /* Statistics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,7 +275,9 @@
 				EBB4DA6F2BAC51CE00A07342 /* CustomTextField.swift in Sources */,
 				2074F19A2BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift in Sources */,
 				EB4893C32BA1D74700F36B55 /* AddView.swift in Sources */,
+				20AFDC3E2BB2D99700084182 /* StatisticsViewModel.swift in Sources */,
 				20C13F602BA31DA8000F3D47 /* RowView.swift in Sources */,
+				20AFDC3C2BB2D96400084182 /* StatisticsView.swift in Sources */,
 				EBE696C22BA20AE700803154 /* CustomPicker.swift in Sources */,
 				EB5D73EE2BA4BDD1007D1C9D /* SettingsView.swift in Sources */,
 				EBE2F54D2BAB37DD00E6FB2B /* FeedbackView.swift in Sources */,
@@ -285,6 +296,7 @@
 				EBE2F54F2BAB392900E6FB2B /* StarView.swift in Sources */,
 				2074F19C2BA88B3500117EC4 /* CustomPickerNotifs.swift in Sources */,
 				2074F1982BA88AB400117EC4 /* NotifsViewModel.swift in Sources */,
+				20AFDC402BB2D9B000084182 /* Statistics.swift in Sources */,
 				EBE2F54B2BAB288700E6FB2B /* DeletableRowView.swift in Sources */,
 				209EBB2E2BA49FC3001C2887 /* SingleCreatorView.swift in Sources */,
 				20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */,
