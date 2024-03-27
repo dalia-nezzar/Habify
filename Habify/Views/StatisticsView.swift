@@ -1,19 +1,11 @@
-//
-//  StatisticsView.swift
-//  Habify
-//
-//  Created by thiam mame diarra on 21/03/2024.
-//
 import SwiftUI
+import SwiftUICharts
+
 
 struct StatisticsView: View {
-    @StateObject var viewModel = StatisticsViewModel()
+    @EnvironmentObject var habitsViewModel: HabitsViewModel
     @State private var selectedDayIndex = 0
-    var statistics = Statistics()
-    
-    var lastFiveDaysRange: Range<Int> {
-        0..<viewModel.lastFiveDays.count
-    }
+    @State private var lastFiveDaysStats = [(date: Date, habitsDone: Int)]()
     
     var body: some View {
         NavigationView {
@@ -25,15 +17,20 @@ struct StatisticsView: View {
                         .edgesIgnoringSafeArea(.all)
                     
                     VStack {
-                        HStack {
-                            Text(" \(viewModel.lastFiveDays[selectedDayIndex])")
+                        /*HStack {
+                            Text("Select a day") // Affiche le numéro du jour
                                 .padding(20)
                                 .font(.system(size:18))
                                 .foregroundColor(Color("MainIconColor"))
                                 .bold()
                             Spacer()
                             Menu {
-                                // TODO: faire le menu des jours
+                                Picker("Select a date", selection: $selectedDayIndex) {
+                                    ForEach(Array(habitsViewModel.stats[0].dailyStats.enumerated()), id: \.offset) { index, dailyStat in
+                                        Text(dailyStat.date.formatted(date: .long, time: .omitted))
+                                            .tag(index)
+                                    }
+                                }
                             } label: {
                                 Image(systemName: "arrow.down.circle.fill")
                                     .foregroundColor(.white)
@@ -48,11 +45,10 @@ struct StatisticsView: View {
                             .padding()
                             .foregroundColor(.blue)
                         }
-                        
                         .frame(width: 319, height: 61)
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)*/
                         
                         HStack {
                             VStack(alignment: .leading, spacing: 5){
@@ -60,19 +56,17 @@ struct StatisticsView: View {
                                     Text("My Habits")
                                         .bold()
                                         .font(.system(size:20))
-                                    Text("for \(viewModel.lastFiveDays[selectedDayIndex])")
+                                    Text("for today")
                                         .font(.system(size:20))
                                 }
-                                
-                                Text("\(viewModel.habitsCompletedToday) of \(viewModel.totalHabits) completed")
+                                Text("\(habitsViewModel.totalHabitsDone()) out of \(habitsViewModel.totalHabits()) completed")
                                     .font(.system(size:13))
-                                
                             }
                             .padding(20)
                             Spacer()
                             
                             VStack {
-                                Text("\(viewModel.completionPercentage, specifier: "%.f")%")
+                                Text(String(format: "%.0f%%", habitsViewModel.percentageOfHabitsDoneToday()))
                                     .font(.system(size:18))
                                     .bold()
                                     .frame(width: 319, height: 61)
@@ -86,7 +80,6 @@ struct StatisticsView: View {
                                     )
                                     .padding(30)
                             }
-                            
                         }
                         .frame(width: 319, height: 111)
                         .background(Color.white)
@@ -94,89 +87,41 @@ struct StatisticsView: View {
                         .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                         
                         HStack {
-                            VStack {
-                                Image(systemName: "sunrise.fill")
-                                    .resizable()
-                                    .foregroundColor(Color("filterMorning"))
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40, height: 40)
-                                    .shadow(color: Color.black.opacity(0.20), radius: 16, x: 0, y: 0)
-                                VStack(alignment: .leading) {
-                                    Text("\(viewModel.morningCompletionPercentage, specifier: "%.f")%")
-                                        .foregroundColor(Color("MainIconColor"))
-                                        .font(.system(size: 18))
-                                        .bold()
-                                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
-                                    Text("completed")
-                                        .font(.system(size: 13))
-                                        .foregroundColor(Color("MainIconColor"))
-                                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                            ForEach(Period.allCases.filter { $0 != .all }, id: \.self) { period in
+                                VStack {
+                                    Image(systemName: period.iconPeriod)
+                                        .resizable()
+                                        .foregroundColor(period.colorsFilter)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 40, height: 40)
+                                        .shadow(color: Color.black.opacity(0.20), radius: 16, x: 0, y: 0)
+                                    VStack(alignment: .leading) {
+                                        Text(String(format: "%.0f%%", habitsViewModel.percentageOfHabitsDoneForPeriod(in: period)))
+                                            .foregroundColor(Color("MainIconColor"))
+                                            .font(.system(size: 18))
+                                            .bold()
+                                            .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                                        Text("completed")
+                                            .font(.system(size: 13))
+                                            .foregroundColor(Color("MainIconColor"))
+                                            .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
+                                    }
                                 }
+                                .frame(width: 103, height: 103)
+                                .background(period.colorsHabit)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .padding(.vertical)
                             }
-                            .frame(width: 103, height: 103)
-                            .background(Color("habitMorning"))
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            
-                            Spacer()
-                            
-                            VStack {
-                                Image(systemName: "sun.max.fill")
-                                    .resizable()
-                                    .foregroundColor(Color("filterAfternoon"))
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40, height: 40)
-                                    .shadow(color: Color.black.opacity(0.20), radius: 16, x: 0, y: 0)
-                                VStack(alignment: .leading) {
-                                    Text("\(viewModel.afternoonCompletionPercentage, specifier: "%.f")%")
-                                        .foregroundColor(Color("MainIconColor"))
-                                        .font(.system(size: 18))
-                                        .bold()
-                                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
-                                    Text("completed")
-                                        .font(.system(size: 13))
-                                        .foregroundColor(Color("MainIconColor"))
-                                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
-                                }
-                            }
-                            .frame(width: 103, height: 103)
-                            .background(Color("habitAfternoon"))
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            
-                            Spacer()
-                            
-                            VStack {
-                                Image(systemName: "moon.stars.fill")
-                                    .resizable()
-                                    .foregroundColor(Color("filterNight"))
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40, height: 40)
-                                    .shadow(color: Color.black.opacity(0.20), radius: 16, x: 0, y: 0)
-                                VStack(alignment: .leading) {
-                                    Text("\(viewModel.nightCompletionPercentage, specifier: "%.f")%")
-                                        .foregroundColor(Color("MainIconColor"))
-                                        .font(.system(size: 18))
-                                        .bold()
-                                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
-                                    Text("completed")
-                                        .font(.system(size: 13))
-                                        .foregroundColor(Color("MainIconColor"))
-                                        .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
-                                }
-                            }
-                            .frame(width: 103, height: 103)
-                            .background(Color("habitNight"))
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
                         .frame(width: 319, height: 111)
                         
                         HStack{
-                            // days
                             VStack(alignment: .leading) {
                                 Image(systemName: "calendar")
                                     .resizable()
                                     .frame(width: 45, height: 45)
                                     .foregroundColor(Color("MainIconColor"))
-                                Text("\(statistics.currentDay) days")
+                                Text("\(habitsViewModel.daysSinceInstallation()) days")
                                     .font(.system(size: 32))
                                     .bold()
                                     .foregroundColor(Color("MainIconColor"))
@@ -191,13 +136,12 @@ struct StatisticsView: View {
                             
                             Spacer()
                             
-                            //habits done
                             VStack(alignment: .leading) {
                                 Image(systemName: "checklist.checked")
                                     .resizable()
                                     .frame(width: 45, height: 45)
                                     .foregroundColor(Color("MainIconColor"))
-                                Text("\(statistics.habitsDone)")
+                                Text("\(habitsViewModel.totalHabitsDoneSinceInstallation())")
                                     .font(.system(size: 32))
                                     .bold()
                                     .foregroundColor(Color("MainIconColor"))
@@ -211,32 +155,31 @@ struct StatisticsView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
                         .frame(width: 319)
-                        Button(action: {
-                            // Code to advance to the next day
-                            viewModel.advanceToNextDay()
-                        }) {
-                            Text("Next Day")
-                                .font(.system(size: 18))
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color("GradientColor"))
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                        }
-                        .padding()
-                        Spacer()
                     }
+                    
+                    Text("5-Days Statistics")
+                        .font(.title2)
+                        .foregroundColor(Color("AltColorText"))
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 40)
+                        .padding(.top, 20)
                     
                 }
                 .onAppear {
-                    viewModel.updateStatistics()
+                    lastFiveDaysStats = habitsViewModel.getLastFiveDaysStats()
                 }
+
             }
+            
         }
+        
     }
 }
 
 struct StatisticsView_Previews: PreviewProvider {
     static var previews: some View {
         StatisticsView()
+            .environmentObject(HabitsViewModel())
     }
 }

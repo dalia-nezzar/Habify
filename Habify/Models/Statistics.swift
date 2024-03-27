@@ -8,30 +8,29 @@
 import Foundation
 
 struct Statistics {
-    var habitsDone: Int = 0
-    var lastFiveDays: [Date] = []
-    var habitsCompletedLastFiveDays: [[Habit]] = []
-    var currentDay: Int = 1
-    
-    mutating func updateStatistics() {
-        countHabitsCompletedToday()
-        updateLastFiveDays()
-        currentDay += 1
-    }
-    
-    private mutating func countHabitsCompletedToday() {
-        let today = habitsCompletedLastFiveDays.first ?? []
-        let completedHabitsToday = today.filter { $0.state == true }.count
-        habitsDone += completedHabitsToday
-    }
-    
-    private mutating func updateLastFiveDays() {
-        if lastFiveDays.count == 5 {
-            lastFiveDays.removeFirst()
-            habitsCompletedLastFiveDays.removeFirst()
-        }
-        
-        lastFiveDays.append(Date())
-        habitsCompletedLastFiveDays.append([])
+    var daysSinceInstallation: Int
+    var installationDate: Date
+    var totalHabitsDone: Int
+    var dailyStats: [DailyStat]
+
+    init() {
+        self.installationDate = Date()
+        self.daysSinceInstallation = 0
+        self.totalHabitsDone = 0
+        self.dailyStats = []
     }
 }
+
+struct DailyStat {
+    var date: Date
+    var habits: [Habit]
+    var habitsDone: Int
+    var totalHabits: Int
+    var morningHabitsDone: Int
+    var morningHabitsTotal: Int
+    var afternoonHabitsDone: Int
+    var afternoonHabitsTotal: Int
+    var nightHabitsDone: Int
+    var nightHabitsTotal: Int
+}
+

@@ -60,13 +60,22 @@ struct Habit: Identifiable {
     var title: String
     var state: Bool
     var period: Period
+    var date: Date
     
-    static var testData = [
-        Habit(title: "Learn React JS", state: true, period: .morning),
-        Habit(title: "Go Workout", state: true, period: .afternoon),
-        Habit(title: "Draw an animal", state: false, period: .night),
-        Habit(title: "Read my book", state: true, period: .night),
-        Habit(title: "Do 50 pushes", state: false, period: .morning)
-    ]
+    static let calendar = Calendar.current
+    
+    static var testData: [Habit] {
+        let today = calendar.startOfDay(for: Date())
+        return [
+            Habit(title: "Learn React JS", state: true, period: .morning, date: today),
+            Habit(title: "Go Workout", state: true, period: .afternoon, date: today),
+            Habit(title: "Draw an animal", state: false, period: .night, date: today),
+            Habit(title: "Read my book", state: true, period: .night, date: today),
+            Habit(title: "Do 50 pushes", state: true, period: .morning, date: today),
+            Habit(title: "Go to a night club", state: false, period: .night, date: today),
+            Habit(title: "Sleep", state: false, period: .night, date: today),
+            Habit(title: "Adopt a dog", state: false, period: .afternoon, date: today)
+        ]
+    }
 }
 

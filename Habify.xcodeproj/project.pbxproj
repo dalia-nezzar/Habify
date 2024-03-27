@@ -10,12 +10,12 @@
 		2074F1982BA88AB400117EC4 /* NotifsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074F1972BA88AB400117EC4 /* NotifsViewModel.swift */; };
 		2074F19A2BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074F1992BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift */; };
 		2074F19C2BA88B3500117EC4 /* CustomPickerNotifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074F19B2BA88B3500117EC4 /* CustomPickerNotifs.swift */; };
+		207F455F2BB45BF800311F9A /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 207F455E2BB45BF800311F9A /* SwiftUICharts */; };
 		209EBB2C2BA48CF7001C2887 /* CreatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB2B2BA48CF7001C2887 /* CreatorsView.swift */; };
 		209EBB2E2BA49FC3001C2887 /* SingleCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB2D2BA49FC3001C2887 /* SingleCreatorView.swift */; };
 		209EBB302BA4A86B001C2887 /* NotifsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB2F2BA4A86B001C2887 /* NotifsView.swift */; };
 		209EBB322BA4B69A001C2887 /* NotifsCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBB312BA4B69A001C2887 /* NotifsCustomView.swift */; };
 		20AFDC3C2BB2D96400084182 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFDC3B2BB2D96400084182 /* StatisticsView.swift */; };
-		20AFDC3E2BB2D99700084182 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFDC3D2BB2D99700084182 /* StatisticsViewModel.swift */; };
 		20AFDC402BB2D9B000084182 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFDC3F2BB2D9B000084182 /* Statistics.swift */; };
 		20C13F5E2BA314D5000F3D47 /* CustomPickerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C13F5D2BA314D5000F3D47 /* CustomPickerHome.swift */; };
 		20C13F602BA31DA8000F3D47 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C13F5F2BA31DA8000F3D47 /* RowView.swift */; };
@@ -50,7 +50,6 @@
 		209EBB2F2BA4A86B001C2887 /* NotifsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifsView.swift; sourceTree = "<group>"; };
 		209EBB312BA4B69A001C2887 /* NotifsCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifsCustomView.swift; sourceTree = "<group>"; };
 		20AFDC3B2BB2D96400084182 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
-		20AFDC3D2BB2D99700084182 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		20AFDC3F2BB2D9B000084182 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		20C13F5D2BA314D5000F3D47 /* CustomPickerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerHome.swift; sourceTree = "<group>"; };
 		20C13F5F2BA31DA8000F3D47 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207F455F2BB45BF800311F9A /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +135,6 @@
 				2074F1972BA88AB400117EC4 /* NotifsViewModel.swift */,
 				EBE696BF2BA1FF4200803154 /* HabitsViewModel.swift */,
 				2074F1992BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift */,
-				20AFDC3D2BB2D99700084182 /* StatisticsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -217,6 +216,9 @@
 			dependencies = (
 			);
 			name = Habify;
+			packageProductDependencies = (
+				207F455E2BB45BF800311F9A /* SwiftUICharts */,
+			);
 			productName = Habify;
 			productReference = EB4893A62BA1A4E700F36B55 /* Habify.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +247,9 @@
 				Base,
 			);
 			mainGroup = EB48939D2BA1A4E700F36B55;
+			packageReferences = (
+				207F455D2BB45BF800311F9A /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = EB4893A72BA1A4E700F36B55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,7 +280,6 @@
 				EBB4DA6F2BAC51CE00A07342 /* CustomTextField.swift in Sources */,
 				2074F19A2BA88AF100117EC4 /* CustomPickerNotifsViewModel.swift in Sources */,
 				EB4893C32BA1D74700F36B55 /* AddView.swift in Sources */,
-				20AFDC3E2BB2D99700084182 /* StatisticsViewModel.swift in Sources */,
 				20C13F602BA31DA8000F3D47 /* RowView.swift in Sources */,
 				20AFDC3C2BB2D96400084182 /* StatisticsView.swift in Sources */,
 				EBE696C22BA20AE700803154 /* CustomPicker.swift in Sources */,
@@ -501,6 +505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		207F455D2BB45BF800311F9A /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		207F455E2BB45BF800311F9A /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 207F455D2BB45BF800311F9A /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EB48939E2BA1A4E700F36B55 /* Project object */;
 }

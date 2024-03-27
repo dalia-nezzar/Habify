@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var habitsViewModel: HabitsViewModel
     @EnvironmentObject var user : User
-    @EnvironmentObject var habitsViewModel : HabitsViewModel
     
     var body: some View {
         
@@ -17,6 +17,7 @@ struct MainView: View {
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
+                    
                         .environment(\.symbolVariants, .none)
                 }
             StatisticsView()
@@ -40,7 +41,8 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(HabitsViewModel())
             .environmentObject(User())
+            .environmentObject(HabitsViewModel())
     }
 }
+
