@@ -19,7 +19,7 @@ struct FeedbackView: View {
     
     var body: some View {
         ZStack {
-            Color("AppBackground")
+            Color("AppColorBackground")
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -33,7 +33,7 @@ struct FeedbackView: View {
                     }
                 }
                 .frame(width: 301, height: 69)
-                .background(.white)
+                .background(Color("WhiteRows"))
                 .cornerRadius(17)
                 .shadow(color: Color.black.opacity(0.08), radius: 16, x: 0, y: 0)
                 
@@ -58,7 +58,7 @@ struct FeedbackView: View {
                     Spacer()
                 }
                 .frame(width: 301, height: 380)
-                .background(.white)
+                .background(Color("WhiteRows"))
                 .cornerRadius(17)
                 .shadow(color: Color.black.opacity(0.1), radius: 16, x: 0, y: 0)
                 
@@ -96,7 +96,7 @@ struct FeedbackView: View {
                     }
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Edit")
+                    Text("Send my feedback")
                         .frame(width: 180, height: 50)
                         .background(Color("MainGreen"))
                         .foregroundColor(.white)

@@ -47,7 +47,7 @@ struct CustomPickerNotifs: View {
         }
         .sheet(isPresented: $viewModel.isSheetPresented) {
             NavigationView {
-                VStack { // Utilisez une vue VStack à la place de Form
+                VStack { 
                     Section(header: Text("Change Hour")) {
                         DatePicker("", selection: $viewModel.selectedDate, displayedComponents: .hourAndMinute)
                             .labelsHidden()

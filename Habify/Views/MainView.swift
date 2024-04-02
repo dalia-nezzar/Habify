@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var habitsViewModel: HabitsViewModel
     @EnvironmentObject var user : User
+    @EnvironmentObject var themeManager : ThemeManager
+
     
     var body: some View {
         
@@ -33,6 +35,7 @@ struct MainView: View {
 
         }
         .accentColor(Color("TabViewColor"))
+        .environment(\.colorScheme, themeManager.colorScheme)
         .ignoresSafeArea(edges: .bottom)
         
     }
@@ -43,6 +46,7 @@ struct MainView_Previews: PreviewProvider {
         MainView()
             .environmentObject(User())
             .environmentObject(HabitsViewModel())
+            .environmentObject(ThemeManager())
     }
 }
 

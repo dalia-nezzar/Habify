@@ -97,7 +97,7 @@ struct ProfileEditView: View {
                 TextField("Enter your name here", text: $newName)
                     .padding(.horizontal)
                     .frame(width:297, height:64)
-                    .background(.white)
+                    .background(Color("WhiteRows"))
                     .foregroundColor(Color("MainBlueColor"))
                     .cornerRadius(33)
                     .shadow(color: .black.opacity(0.05), radius: 7, x:0, y:0)

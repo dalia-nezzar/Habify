@@ -22,7 +22,7 @@ struct NotifsView: View {
     
     var body: some View {
         ZStack {
-            Color("AppBackground")
+            Color("AppColorBackground")
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -53,7 +53,7 @@ struct NotifsView: View {
                             .bold()
                     }
                     .frame(width: 319, height: 61)
-                    .background(Color.white)
+                    .background(Color("WhiteRows"))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                     .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 }
@@ -76,7 +76,7 @@ struct NotifsView: View {
                 }
                 .padding(.leading, 15)
                 .frame(width: 319, height: 61)
-                .background(Color.white)
+                .background(Color("WhiteRows"))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 .onTapGesture {
@@ -96,7 +96,7 @@ struct NotifsView: View {
                 }
                 .padding(.leading, 15)
                 .frame(width: 319, height: 61)
-                .background(Color.white)
+                .background(Color("WhiteRows"))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 .onTapGesture {
@@ -123,7 +123,7 @@ struct NotifsView: View {
                 }
                 .padding(.leading, 15)
                 .frame(width: 319, height: 61)
-                .background(Color.white)
+                .background(Color("WhiteRows"))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 .onTapGesture {
@@ -143,7 +143,7 @@ struct NotifsView: View {
                 }
                 .padding(.leading, 15)
                 .frame(width: 319, height: 61)
-                .background(Color.white)
+                .background(Color("WhiteRows"))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 .onTapGesture {
@@ -170,7 +170,7 @@ struct NotifsView: View {
                 }
                 .padding(.leading, 15)
                 .frame(width: 319, height: 61)
-                .background(Color.white)
+                .background(Color("WhiteRows"))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 .onTapGesture {
@@ -190,7 +190,7 @@ struct NotifsView: View {
                 }
                 .padding(.leading, 15)
                 .frame(width: 319, height: 61)
-                .background(Color.white)
+                .background(Color("WhiteRows"))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                 .onTapGesture {

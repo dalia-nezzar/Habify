@@ -11,13 +11,14 @@ struct SettingsView: View {
     
     
     @EnvironmentObject var user: User
+        
+    @EnvironmentObject var themeManager: ThemeManager
     
-    @State var darkMode = false
 
     var body: some View {
         NavigationView{
             ZStack{
-                Color("AppBackground")
+                Color("AppColorBackground")
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     HStack {
@@ -100,19 +101,19 @@ struct SettingsView: View {
                                 .foregroundColor(Color("MainIconColor"))
                             
                             Spacer()
-                            Toggle("", isOn: $darkMode)
+                            Toggle("", isOn: Binding<Bool>(
+                                get: { self.themeManager.colorScheme == .dark },
+                                set: { self.themeManager.colorScheme = $0 ? .dark : .light }
+                            ))
                                 .labelsHidden()
                                 .toggleStyle(SwitchToggleStyle(tint: Color("MainGreen")))
                                 .padding()
                         }
                         .padding(.leading, 15)
                         .frame(width: 319, height: 61)
-                        .background(Color.white)
+                        .background(Color("WhiteRows"))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
-                        .onTapGesture {
-                            darkMode.toggle()
-                        }
                         
                         
                         Text("Notifications")
@@ -141,7 +142,7 @@ struct SettingsView: View {
                             }
                             .padding(.leading, 15)
                             .frame(width: 319, height: 61)
-                            .background(Color.white)
+                            .background(Color("WhiteRows"))
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                             .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                         }
@@ -174,7 +175,7 @@ struct SettingsView: View {
                             }
                             .padding(.leading, 15)
                             .frame(width: 319, height: 61)
-                            .background(Color.white)
+                            .background(Color("WhiteRows"))
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                             .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                         }
@@ -198,7 +199,7 @@ struct SettingsView: View {
                             }
                             .padding(.leading, 15)
                             .frame(width: 319, height: 61)
-                            .background(Color.white)
+                            .background(Color("WhiteRows"))
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                             .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                         }
@@ -219,6 +220,7 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
             .environmentObject(User())
+            .environmentObject(ThemeManager())
         
         
         

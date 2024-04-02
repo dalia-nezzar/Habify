@@ -123,7 +123,7 @@ struct SingleCreatorView : View{
                 .padding(5)
             }
             .frame(width: 340, height: 222)
-            .background(.white)
+            .background(Color("WhiteRows"))
             .cornerRadius(20)
             .shadow(color: Color.black.opacity(0.20), radius: 16, x: 0, y: 0)
             .padding(20)

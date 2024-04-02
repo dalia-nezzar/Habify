@@ -52,7 +52,7 @@ class HabitsViewModel: ObservableObject {
         updateLastFiveDaysStats()
     }
     
-    /// La fonction est correcte mais ne marchera pas avec les TestData (comme ce n'est pas l'utilisateur qui a directement toggle l'état d'une habitude
+    /// La fonction est correcte mais ne marchera pas avec les TestData (comme ce n'est pas l'utilisateur qui a directement toggle l'état d'une habitude)
     /*func totalHabitsDoneSinceInstallation() -> Int {
         return stats.first?.totalHabitsDone ?? 0
     }
@@ -136,21 +136,17 @@ class HabitsViewModel: ObservableObject {
         let today = calendar.startOfDay(for: Date())
         let habitsForToday = habits.filter { calendar.isDate($0.date, inSameDayAs: today) }
 
-        // Calculez les habitudes faites et totales pour chaque période
         let (morningHabitsDone, morningHabitsTotal) = habitsDoneAndTotal(for: .morning)
         let (afternoonHabitsDone, afternoonHabitsTotal) = habitsDoneAndTotal(for: .afternoon)
         let (nightHabitsDone, nightHabitsTotal) = habitsDoneAndTotal(for: .night)
 
-        // Stockez les habitudes actuelles dans DailyStat
         let dailyStat = DailyStat(date: today, habits: habitsForToday, habitsDone: totalHabitsDone(), totalHabits: totalHabits(), morningHabitsDone: morningHabitsDone, morningHabitsTotal: morningHabitsTotal, afternoonHabitsDone: afternoonHabitsDone, afternoonHabitsTotal: afternoonHabitsTotal, nightHabitsDone: nightHabitsDone, nightHabitsTotal: nightHabitsTotal)
         stats[0].dailyStats.append(dailyStat)
 
-        // Réinitialisez les habitudes pour aujourd'hui
         for (index, _) in habitsForToday.enumerated() {
             habits[index].state = false
         }
 
-        // Ajoutez des habitudes pour demain
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
         let habitsForTomorrow = habits.filter { calendar.isDate($0.date, inSameDayAs: tomorrow) }
 
@@ -159,7 +155,6 @@ class HabitsViewModel: ObservableObject {
             habits.append(newHabit)
         }
 
-        // Triez les habitudes par date et heure
         habits.sort { $0.date < $1.date }
     }
 

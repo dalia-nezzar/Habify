@@ -14,7 +14,7 @@ struct CreatorsView : View{
     
     var body: some View {
         ZStack {
-            Color("AppBackground")
+            Color("AppColorBackground")
             .edgesIgnoringSafeArea(.all)
             VStack {
                 SingleCreatorView(nom: "Dalia Nezzar", description: "Student, designer and developer of habify. ! Always loved coding always will.", image: "DaliaIcon", emailAddress: "nezzar.dalia@gmail.com", phoneNumber: "0769989618", linkedin: "https://fr.linkedin.com/in/dalia-nezzar-302984299", github: "https://github.com/dalia-nezzar")

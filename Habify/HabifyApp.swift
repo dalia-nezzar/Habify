@@ -12,12 +12,15 @@ import Combine
 @main
 struct HabifyApp: App {
     @StateObject var notificationManager = NotifsViewModel.shared
+    @StateObject var themeManager = ThemeManager()
+    
     var body: some Scene {
         WindowGroup {
             
             WelcomeView()
                 .environmentObject(HabitsViewModel())
                 .environmentObject(User())
+                .environmentObject(ThemeManager())
                 .onAppear {
                     notificationManager.requestAuthorization()
                     notificationManager.sendNotification()

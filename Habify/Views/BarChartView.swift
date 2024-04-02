@@ -17,7 +17,7 @@ struct BarChartView: View {
             ZStack {
                 Rectangle()
                     .frame(width:360, height:200)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("WhiteRows"))
                     .cornerRadius(20)
                     .shadow(color: .black.opacity(0.1), radius: 7, x:0, y:0)
                 

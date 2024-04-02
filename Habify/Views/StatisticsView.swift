@@ -10,10 +10,10 @@ struct StatisticsView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color("AppBackground")
+                Color("AppColorBackground")
                     .edgesIgnoringSafeArea(.all)
                 ScrollView{
-                    Color("AppBackground")
+                    Color("AppColorBackground")
                         .edgesIgnoringSafeArea(.all)
                     
                     VStack {
@@ -82,7 +82,7 @@ struct StatisticsView: View {
                             }
                         }
                         .frame(width: 319, height: 111)
-                        .background(Color.white)
+                        .background(Color("WhiteRows"))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .shadow(color: Color.black.opacity(0.10), radius: 16, x: 0, y: 0)
                         
@@ -131,7 +131,7 @@ struct StatisticsView: View {
                                     .bold()
                             }
                             .frame(width: 152, height: 143)
-                            .background(.white)
+                            .background(Color("WhiteRows"))
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                             
                             Spacer()
@@ -151,7 +151,7 @@ struct StatisticsView: View {
                                     .bold()
                             }
                             .frame(width: 152, height: 143)
-                            .background(.white)
+                            .background(Color("WhiteRows"))
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
                         .frame(width: 319)

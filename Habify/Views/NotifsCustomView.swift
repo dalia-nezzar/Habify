@@ -19,7 +19,7 @@ struct NotifsCustomView: View {
 
     var body: some View {
         ZStack {
-            Color("AppBackground")
+            Color("AppColorBackground")
                 .edgesIgnoringSafeArea(.all)
 
             VStack {

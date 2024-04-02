@@ -25,7 +25,7 @@ struct RowView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(habits.period.colorsFilter)
                         )
-                        .foregroundColor(Color("MainIconColor"))
+                        .foregroundColor(Color("MainIconColorFilter"))
 
                     Text(habits.title)
                         .font(.headline)
@@ -42,7 +42,7 @@ struct RowView: View {
             }
             .padding(15)
             .frame(width: 340, height: 76)
-            .background(habits.state ? habits.period.colorsHabit : Color.white)
+            .background(habits.state ? habits.period.colorsHabit : Color("WhiteRows"))
             .clipShape(RoundedRectangle(cornerRadius: 15))
         }
         .padding(.horizontal)
