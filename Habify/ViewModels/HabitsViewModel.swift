@@ -11,6 +11,8 @@ class HabitsViewModel: ObservableObject {
     
     @Published var habits: [Habit] = []
     @Published var stats : [Statistics] = []
+    @Published var lastFiveDaysStats = [(date: Date, habitsDone: Int)]()
+
     
     private var timer: Timer?
     
@@ -38,11 +40,29 @@ class HabitsViewModel: ObservableObject {
         return habitsOnDate
     }
     
+    func updateLastFiveDaysStats() {
+        lastFiveDaysStats = getLastFiveDaysStats()
+    }
+    
     func addHabit(title: String, period: Period) {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
         let newHabit = Habit(title: title, state: false, period: period, date: today)
         habits.append(newHabit)
+        updateLastFiveDaysStats()
+    }
+    
+    /// La fonction est correcte mais ne marchera pas avec les TestData (comme ce n'est pas l'utilisateur qui a directement toggle l'état d'une habitude
+    /*func totalHabitsDoneSinceInstallation() -> Int {
+        return stats.first?.totalHabitsDone ?? 0
+    }
+    */
+    
+    func totalHabitsDoneSinceInstallation() -> Int {
+        let totalTestDataHabitsDone = Habit.testData.filter { $0.state == true }.count
+        let totalCurrentHabitsDone = habits.filter { $0.state == true }.count
+        let total = totalTestDataHabitsDone + totalCurrentHabitsDone
+        return total
     }
 
     
@@ -65,15 +85,11 @@ class HabitsViewModel: ObservableObject {
                     }
                 }
                 habits[index].state.toggle()
+                updateLastFiveDaysStats()
             }
         }
     }
 
-    
-    func totalHabitsDoneSinceInstallation() -> Int {
-        return stats.first?.totalHabitsDone ?? 0
-    }
-    
     func totalHabitsDone() -> Int {
         return habits.filter { $0.state == true }.count
     }

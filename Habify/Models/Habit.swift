@@ -66,15 +66,53 @@ struct Habit: Identifiable {
     
     static var testData: [Habit] {
         let today = calendar.startOfDay(for: Date())
+        let startDate = calendar.date(byAdding: .day, value: -5, to: today)!
         return [
-            Habit(title: "Learn React JS", state: true, period: .morning, date: today),
-            Habit(title: "Go Workout", state: true, period: .afternoon, date: today),
+            Habit(title: "Learn React JS", state: false, period: .morning, date: today),
+            Habit(title: "Go Workout", state: false, period: .afternoon, date: today),
             Habit(title: "Draw an animal", state: false, period: .night, date: today),
-            Habit(title: "Read my book", state: true, period: .night, date: today),
-            Habit(title: "Do 50 pushes", state: true, period: .morning, date: today),
+            Habit(title: "Read my book", state: false, period: .night, date: today),
+            Habit(title: "Do 50 pushes", state: false, period: .morning, date: today),
             Habit(title: "Go to a night club", state: false, period: .night, date: today),
             Habit(title: "Sleep", state: false, period: .night, date: today),
-            Habit(title: "Adopt a dog", state: false, period: .afternoon, date: today)
+            Habit(title: "Adopt a dog", state: false, period: .afternoon, date: today),
+            
+            Habit(title: "Learn React JS", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 1, to: startDate)!),
+            Habit(title: "Go Workout", state: true, period: .afternoon, date: calendar.date(byAdding: .day, value: 1, to: startDate)!),
+            Habit(title: "Draw an animal", state: false, period: .night, date: calendar.date(byAdding: .day, value: 1, to: startDate)!),
+            Habit(title: "Read my book", state: true, period: .night, date: calendar.date(byAdding: .day, value: 1, to: startDate)!),
+            Habit(title: "Do 50 pushes", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 1, to: startDate)!),
+            
+            Habit(title: "Learn React JS", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            Habit(title: "Go Workout", state: true, period: .afternoon, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            Habit(title: "Draw an animal", state: true, period: .night, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            Habit(title: "Read my book", state: true, period: .night, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            Habit(title: "Do 50 pushes", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            Habit(title: "Go to a night club", state: false, period: .night, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            Habit(title: "Sleep", state: true, period: .night, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            Habit(title: "Adopt a dog", state: false, period: .afternoon, date: calendar.date(byAdding: .day, value: 2, to: startDate)!),
+            
+            Habit(title: "Learn React JS", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            Habit(title: "Go Workout", state: true, period: .afternoon, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            Habit(title: "Draw an animal", state: false, period: .night, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            Habit(title: "Read my book", state: true, period: .night, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            Habit(title: "Do 50 pushes", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            Habit(title: "Go to a night club", state: false, period: .night, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            Habit(title: "Sleep", state: false, period: .night, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            Habit(title: "Adopt a dog", state: false, period: .afternoon, date: calendar.date(byAdding: .day, value: 3, to: startDate)!),
+            
+            Habit(title: "Learn React JS", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 4, to: startDate)!),
+            Habit(title: "Go Workout", state: true, period: .afternoon, date: calendar.date(byAdding: .day, value: 4, to: startDate)!),
+            Habit(title: "Draw an animal", state: false, period: .night, date: calendar.date(byAdding: .day, value: 4, to: startDate)!),
+            Habit(title: "Read my book", state: true, period: .night, date: calendar.date(byAdding: .day, value: 4, to: startDate)!),
+            Habit(title: "Do 50 pushes", state: true, period: .morning, date: calendar.date(byAdding: .day, value: 4, to: startDate)!),
+            Habit(title: "Go to a night club", state: false, period: .night, date: calendar.date(byAdding: .day, value: 4, to: startDate)!),
+            Habit(title: "Sleep", state: false, period: .night, date: calendar.date(byAdding: .day, value: 4, to: startDate)!),
+            Habit(title: "Adopt a dog", state: false, period: .afternoon, date: calendar.date(byAdding: .day, value: 4, to: startDate)!)
+            
+            
+
+            
         ]
     }
 }
